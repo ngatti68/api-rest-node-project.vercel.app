@@ -48,9 +48,14 @@ export const updateProduct = async (id, data) => {
     return productModel.updateById(id, data);
 };
 
-export const deleteProduct = async (id) => {
-    if (!id) {
-        throw new Error("El ID es obligatorio para eliminar");
+export const deleteProduct = async (req, res) => {
+    try {
+        const success = await productModel.deleteById(req.params.id);
+        if (!success) {
+            return res.status(404).json({ error: 'Producto no encontrado' });
+        }
+        res.json({ message: 'Producto eliminado' });
+    } catch (error) {
+        res.status(500).json({ error: 'Error al eliminar producto' });
     }
-    return productModel.deleteProduct(id);
 };

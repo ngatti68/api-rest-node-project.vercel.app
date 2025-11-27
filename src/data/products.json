@@ -1,12 +1,52 @@
 [
-  { "name": "Laptop Dell Inspiron 15", "price": 850, "category": "tecnologia" },
-  { "name": "Smartphone Samsung Galaxy S22", "price": 1200, "category": "tecnologia" },
-  { "name": "Auriculares Bluetooth Sony WH-1000XM4", "price": 300, "category": "audio" },
-  { "name": "Cafetera Nespresso Essenza Mini", "price": 150, "category": "electrodomesticos" },
-  { "name": "Zapatillas Nike Air Max", "price": 200, "category": "ropa" },
-  { "name": "Campera Adidas Originals", "price": 180, "category": "ropa" },
-  { "name": "Silla Gamer Razer Iskur", "price": 400, "category": "muebles" },
-  { "name": "Mesa de comedor madera", "price": 600, "category": "muebles" },
-  { "name": "Libro 'Clean Code' - Robert C. Martin", "price": 45, "category": "libros" },
-  { "name": "Monitor LG UltraWide 34''", "price": 700, "category": "tecnologia" }
+  {
+    "name": "Laptop Dell Inspiron 15",
+    "price": 850,
+    "category": "tecnologia"
+  },
+  {
+    "name": "Smartphone Samsung Galaxy S22",
+    "price": 1200,
+    "category": "tecnologia"
+  },
+  {
+    "name": "Auriculares Bluetooth Sony WH-1000XM4",
+    "price": 300,
+    "category": "audio"
+  },
+  {
+    "name": "Cafetera Nespresso Essenza Mini",
+    "price": 150,
+    "category": "electrodomesticos"
+  },
+  {
+    "name": "Zapatillas Nike Air Max",
+    "price": 200,
+    "category": "ropa"
+  },
+  {
+    "name": "Campera Adidas Originals",
+    "price": 180,
+    "category": "ropa"
+  },
+  {
+    "name": "Silla Gamer Razer Iskur",
+    "price": 400,
+    "category": "muebles"
+  },
+  {
+    "name": "Mesa de comedor madera",
+    "price": 600,
+    "category": "muebles"
+  },
+  {
+    "name": "Libro 'Clean Code' - Robert C. Martin",
+    "price": 45,
+    "category": "libros"
+  },
+  {
+    "name": "Monitor LG UltraWide 34''",
+    "price": 700,
+    "category": "tecnologia"
+  }
 ]

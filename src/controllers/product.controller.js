@@ -42,6 +42,10 @@ export const createProduct = async (req, res) => {
 
         const newProduct = await ProductModel.create({ name, price, category });
 
+        if (!newProduct) {
+            return res.status(409).json({ error: 'Producto duplicado' });
+        }
+
         res.status(201).json({
             message: 'Producto creado exitosamente',
             product: newProduct

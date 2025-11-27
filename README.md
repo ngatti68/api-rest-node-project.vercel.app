@@ -45,6 +45,7 @@ Este proyecto fue desarrollado utilizando herramientas modernas del ecosistema J
 ### 🧩 Core del proyecto
 
 - `Node.js` - Entorno de ejecución para **JavaScript** en el servidor.
+
 - `Express.js` - **Framework minimalista** para construir la API RESTful.
 
 ### ☁️ Persistencia de datos
@@ -55,14 +56,19 @@ Este proyecto fue desarrollado utilizando herramientas modernas del ecosistema J
 
 - `jasonwebtoken (JWT)` - Generación y verificación de **tokens para autenticación**.
 
+- `bcrypt` - Para proteger las contraseñas de los usuarios, en lugar de almacenar contraseñas en texto plano, se guardan **hashes seguros**
+
 ### 📦 Utilidades y configuración
 
 - `dotenv` - Manejo de variables de entorno para proteger credenciales y configuraciones sensibles.
+
 - `cors` - Configuración de políticas de acceso entre dominios.
 
 ### 🧪 Validación y manejo de errores
 
 - Middleware personalizado para manejo centralizado de errores.
+
+- `middleware global de manejo de errores` - Para garantizar respuestas consistentes y evitar rupturas en el servidor, este middleware captura excepciones y devuelve respuestas JSON uniformes.
 
 ## Instalación
 

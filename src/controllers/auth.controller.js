@@ -1,27 +1,31 @@
-import bcrypt from 'bcrypt';
-import jwt from 'jsonwebtoken';
-import { createUser, getUserByEmail } from '../models/user.model.js';
-
-const JWT_SECRET = process.env.JWT_SECRET;
+import { registerUser, loginUser } from '../services/auth.service.js';
 
 export const register = async (req, res) => {
     const { email, password, role = 'user' } = req.body;
-    const existingUser = await getUserByEmail(email);
-    if (existingUser) return res.status(400).json({ message: 'Usuario ya existe' });
+    
+    if (!email || !password) {
+        return res.status(400).json({ message: 'Email y password son requeridos' });
+    }
 
-    const hashedPassword = await bcrypt.hash(password, 10);
-    await createUser({ email, password: hashedPassword, role });
-    res.status(201).json({ message: 'Usuario registrado' });
+    try {
+        const result = await registerUser(email, password, role);
+        res.status(201).json(result);
+    } catch (error) {
+        res.status(error.status || 500).json({ message: error.message });
+    }
 };
 
 export const login = async (req, res) => {
     const { email, password } = req.body;
-    const user = await getUserByEmail(email);
-    if (!user) return res.status(404).json({ message: 'Usuario no encontrado' });
+    
+    if (!email || !password) {
+        return res.status(400).json({ message: 'Email y password son requeridos' });
+    }
 
-    const match = await bcrypt.compare(password, user.password);
-    if (!match) return res.status(401).json({ message: 'Credenciales inválidas' });
-
-    const token = jwt.sign({ email: user.email, role: user.role }, JWT_SECRET, { expiresIn: '1h' });
-    res.json({ token });
+    try {
+        const result = await loginUser(email, password);
+        res.json(result);
+    } catch (error) {
+        res.status(error.status || 500).json({ message: error.message });
+    }
 };
